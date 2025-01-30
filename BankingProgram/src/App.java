@@ -28,8 +28,8 @@ public class App {
                 
                 switch (choice) {
                     case (1) -> ShowBalance(balance);
-                    case (2) -> Deposit(scanner,balance);
-                    case (3) -> Withdraw(scanner,balance);
+                    case (2) -> balance = Deposit(scanner,balance);
+                    case (3) -> balance = Withdraw(scanner,balance);
                     case (4) -> isRunning = false;
                     
                     default -> System.out.println("Invalid Choice");
@@ -49,7 +49,7 @@ public class App {
 
 
 
-    static void Deposit(Scanner scanner ,double balance){
+    static double Deposit(Scanner scanner ,double balance){
         double AddMoney = 0;
         System.out.println("*******************************");
 
@@ -58,12 +58,13 @@ public class App {
         balance+=AddMoney;
 
         System.out.printf("The Deposited amount is %f",AddMoney);
+        return balance;
 
         
     }
 
 
-    static void Withdraw(Scanner scanner ,double balance){
+    static double Withdraw(Scanner scanner ,double balance){
         double SubMoney = 0;
         System.out.println("*******************************");
 
@@ -72,7 +73,7 @@ public class App {
         balance -= SubMoney;
 
         System.out.printf("The Withdrawed amount is %f",SubMoney);
-
+        return balance;
     }
 
 
